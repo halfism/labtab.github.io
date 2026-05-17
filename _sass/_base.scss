@@ -1,0 +1,171 @@
+// ======================
+// Reset & Base Styles
+// ======================
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: $line-height;
+  color: $text-primary;
+  background-color: $bg-primary;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(108, 99, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Background dot pattern
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(168, 139, 250, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ======================
+// Typography
+// ======================
+h1, h2, h3, h4, h5, h6 {
+  color: $text-primary;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $font-size-3xl; }
+h2 { font-size: $font-size-2xl; }
+h3 { font-size: $font-size-xl; }
+h4 { font-size: $font-size-lg; }
+h5 { font-size: $font-size-base; }
+h6 { font-size: $font-size-sm; }
+
+p {
+  margin-bottom: $spacing-md;
+  color: $text-secondary;
+}
+
+a {
+  color: $highlight;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $accent-start;
+  }
+}
+
+strong {
+  color: $text-primary;
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+ul, ol {
+  padding-left: $spacing-xl;
+  margin-bottom: $spacing-md;
+
+  li {
+    margin-bottom: $spacing-xs;
+    color: $text-secondary;
+  }
+}
+
+blockquote {
+  border-left: 3px solid $accent-start;
+  padding: $spacing-md $spacing-lg;
+  margin: $spacing-lg 0;
+  background: $highlight-soft;
+  border-radius: 0 $border-radius-sm $border-radius-sm 0;
+
+  p {
+    margin-bottom: 0;
+    color: $text-primary;
+    font-style: italic;
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, $glass-border, transparent);
+  margin: $spacing-2xl 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $border-radius;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-lg;
+
+  th, td {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $glass-border;
+    text-align: left;
+  }
+
+  th {
+    background: $surface;
+    color: $text-primary;
+    font-weight: 600;
+  }
+
+  td {
+    color: $text-secondary;
+  }
+
+  tr:hover td {
+    background: $highlight-soft;
+  }
+}
+
+// Selection
+::selection {
+  background: rgba(108, 99, 255, 0.3);
+  color: $text-primary;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $surface-light;
+  border-radius: 4px;
+
+  &:hover {
+    background: $highlight;
+  }
+}

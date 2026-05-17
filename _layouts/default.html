@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  {% include head.html %}
+  {% include seo.html %}
+</head>
+<body>
+  {% include header.html %}
+
+  {% if page.layout == 'post' %}
+  <div class="reading-progress" id="reading-progress"></div>
+  {% endif %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include search-modal.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/effects.js' | relative_url }}"></script>
+</body>
+</html>

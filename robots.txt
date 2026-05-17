@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://halfism.github.io/labtab/sitemap.xml

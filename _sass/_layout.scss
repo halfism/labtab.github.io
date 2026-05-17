@@ -1,0 +1,106 @@
+// ======================
+// Layout System
+// ======================
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+  position: relative;
+  z-index: 1;
+}
+
+.container-narrow {
+  max-width: $container-narrow;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+  position: relative;
+  z-index: 1;
+}
+
+// Main content area
+.main-content {
+  min-height: calc(100vh - 200px);
+  padding-top: $spacing-3xl;
+  padding-bottom: $spacing-3xl;
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: $spacing-xl;
+
+  &--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--auto {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+// Flex utilities
+.flex {
+  display: flex;
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--between {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--col {
+    flex-direction: column;
+  }
+
+  &--gap-sm {
+    gap: $spacing-sm;
+  }
+
+  &--gap-md {
+    gap: $spacing-md;
+  }
+
+  &--gap-lg {
+    gap: $spacing-lg;
+  }
+}
+
+// Section spacing
+.section {
+  margin-bottom: $spacing-3xl;
+}
+
+.section-title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+  background: $accent-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Reading progress bar
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: $accent-gradient;
+  z-index: $z-header + 1;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}

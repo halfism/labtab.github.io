@@ -1,0 +1,54 @@
+// ======================
+// Footer
+// ======================
+
+.site-footer {
+  padding: $spacing-2xl 0;
+  border-top: 1px solid $glass-border;
+  margin-top: $spacing-3xl;
+  position: relative;
+  z-index: 1;
+}
+
+.footer__content {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.footer__text {
+  color: $text-muted;
+  font-size: $font-size-sm;
+
+  a {
+    color: $text-secondary;
+
+    &:hover {
+      color: $highlight;
+    }
+  }
+}
+
+.footer__social {
+  display: flex;
+  gap: $spacing-md;
+
+  a {
+    color: $text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $highlight;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

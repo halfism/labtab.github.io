@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="container">
+  <header class="page-header" style="margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(168,139,250,0.15);">
+    <h1 style="font-size:2.5rem;font-weight:800;">Categories</h1>
+    <p style="color:#9b95b0;margin-top:0.5rem;">Browse posts by category.</p>
+  </header>
+
+  <!-- Category Cards -->
+  <div class="grid grid--auto" style="margin-bottom:3rem;">
+    {% for category in site.categories %}
+    <a href="#{{ category[0] }}" class="category-card" style="padding:1.5rem;border-radius:12px;text-decoration:none;background:rgba(30,21,53,0.6);backdrop-filter:blur(12px);border:1px solid rgba(168,139,250,0.15);transition:all 0.3s ease;">
+      <h3 style="color:#e8e6f0;font-size:1.125rem;margin-bottom:0.5rem;">{{ category[0] }}</h3>
+      <span style="color:#6b6280;font-size:0.875rem;">{{ category[1].size }} posts</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- Category Sections -->
+  {% for category in site.categories %}
+  <section id="{{ category[0] }}" style="margin-bottom:3rem;">
+    <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;background:linear-gradient(135deg,#6c63ff,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">{{ category[0] }}</h2>
+    <div class="grid grid--auto">
+      {% for post in category[1] %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+<style>
+.category-card:hover {
+  border-color: rgba(168, 139, 250, 0.3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+</style>

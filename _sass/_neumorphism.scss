@@ -1,0 +1,91 @@
+// ======================
+// Neumorphism Mixins
+// ======================
+
+// Raised surface - appears lifted from background
+@mixin neu-raised($intensity: 1) {
+  box-shadow:
+    #{8px * $intensity} #{8px * $intensity} #{16px * $intensity} $neu-dark,
+    #{-4px * $intensity} #{-4px * $intensity} #{12px * $intensity} $neu-light;
+}
+
+// Pressed/inset surface - appears pushed in
+@mixin neu-pressed($intensity: 1) {
+  box-shadow:
+    inset #{4px * $intensity} #{4px * $intensity} #{8px * $intensity} $neu-inset-dark,
+    inset #{-2px * $intensity} #{-2px * $intensity} #{6px * $intensity} $neu-inset-light;
+}
+
+// Flat - no shadow (base state)
+@mixin neu-flat() {
+  box-shadow: none;
+}
+
+// Soft raised with glow accent
+@mixin neu-glow($color: $accent-start, $intensity: 1) {
+  box-shadow:
+    #{6px * $intensity} #{6px * $intensity} #{14px * $intensity} $neu-dark,
+    #{-3px * $intensity} #{-3px * $intensity} #{10px * $intensity} $neu-light,
+    0 0 #{20px * $intensity} rgba($color, 0.15);
+}
+
+// Button styles
+@mixin neu-button() {
+  @include neu-raised(0.6);
+  background: $surface;
+  border: 1px solid $glass-border;
+  color: $text-primary;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    @include neu-glow($accent-start, 0.5);
+    transform: translateY(-2px);
+    border-color: $glass-border-hover;
+  }
+
+  &:active {
+    @include neu-pressed(0.5);
+    transform: translateY(0);
+  }
+}
+
+// Card with neumorphic style
+@mixin neu-card() {
+  background: $surface;
+  border-radius: $border-radius;
+  @include neu-raised(0.7);
+  border: 1px solid $glass-border;
+  transition: all $transition-base;
+
+  &:hover {
+    @include neu-glow($accent-start, 0.6);
+    transform: translateY(-4px);
+    border-color: $glass-border-hover;
+  }
+}
+
+// Input field
+@mixin neu-input() {
+  @include neu-pressed(0.4);
+  background: darken($surface, 3%);
+  border: 1px solid $glass-border;
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  color: $text-primary;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  outline: none;
+  transition: all $transition-fast;
+
+  &:focus {
+    border-color: $accent-start;
+    box-shadow:
+      inset 2px 2px 4px $neu-inset-dark,
+      0 0 0 2px rgba($accent-start, 0.2);
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}

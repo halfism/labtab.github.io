@@ -1,0 +1,234 @@
+// ======================
+// Post Content Styles
+// ======================
+
+.post-header {
+  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-xl;
+  border-bottom: 1px solid $glass-border;
+}
+
+.post-header__title {
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+}
+
+.post-header__meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  color: $text-muted;
+  font-size: $font-size-sm;
+}
+
+.post-header__date,
+.post-header__reading-time {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.post-header__categories {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.post-header__category {
+  @include glass-tag();
+}
+
+// Article body
+.post-content {
+  h2 {
+    font-size: $font-size-2xl;
+    margin-top: $spacing-2xl;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $glass-border;
+  }
+
+  h3 {
+    font-size: $font-size-xl;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+  }
+
+  h4 {
+    font-size: $font-size-lg;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    margin-bottom: $spacing-lg;
+    color: $text-secondary;
+    line-height: 1.8;
+  }
+
+  img {
+    border-radius: $border-radius;
+    margin: $spacing-lg 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  a {
+    color: $highlight;
+    text-decoration: underline;
+    text-decoration-color: rgba($highlight, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color $transition-fast;
+
+    &:hover {
+      text-decoration-color: $highlight;
+    }
+  }
+
+  ul, ol {
+    margin-bottom: $spacing-lg;
+    padding-left: $spacing-xl;
+
+    li {
+      margin-bottom: $spacing-sm;
+      line-height: 1.7;
+    }
+  }
+
+  // Inline code
+  code {
+    font-family: $font-mono;
+    font-size: 0.85em;
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: $highlight;
+  }
+
+  // Code blocks (override inline)
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: $font-size-sm;
+  }
+}
+
+// Post footer (tags, share)
+.post-footer {
+  margin-top: $spacing-2xl;
+  padding-top: $spacing-xl;
+  border-top: 1px solid $glass-border;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xl;
+
+  .tag {
+    @include glass-tag();
+  }
+}
+
+.post-share {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  span {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+
+  a {
+    @include neu-button();
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: $font-size-sm;
+    padding: 0;
+  }
+}
+
+// Table of Contents (sidebar)
+.toc {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding: $spacing-lg;
+  @include glass(8px, 0.4, 0.1);
+  border-radius: $border-radius;
+  font-size: $font-size-sm;
+
+  &__title {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-md;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: $spacing-xs;
+  }
+
+  a {
+    color: $text-secondary;
+    text-decoration: none;
+    padding: $spacing-xs 0;
+    display: block;
+    border-left: 2px solid transparent;
+    padding-left: $spacing-sm;
+    transition: all $transition-fast;
+
+    &:hover,
+    &.active {
+      color: $highlight;
+      border-left-color: $accent-start;
+    }
+  }
+
+  .toc__h3 {
+    padding-left: $spacing-lg;
+  }
+}
+
+// Post with sidebar layout
+.post-layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: $spacing-2xl;
+  align-items: start;
+}
+
+// Related posts
+.related-posts {
+  margin-top: $spacing-3xl;
+
+  &__title {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-lg;
+  }
+}

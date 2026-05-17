@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<article class="container-narrow">
+  <!-- Post Header -->
+  <header class="post-header">
+    <h1 class="post-header__title">{{ page.title }}</h1>
+    <div class="post-header__meta">
+      <span class="post-header__date">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        {{ page.date | date: "%Y-%m-%d" }}
+      </span>
+      <span class="post-header__reading-time">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        {% assign words = content | number_of_words %}
+        {% assign mins = words | divided_by: 200 %}
+        {% if mins < 1 %}1{% else %}{{ mins }}{% endif %} min read
+      </span>
+      {% if page.categories.size > 0 %}
+      <div class="post-header__categories">
+        {% for cat in page.categories %}
+        <a href="{{ '/categories/' | relative_url }}#{{ cat }}" class="post-header__category">{{ cat }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- Post Body -->
+  {% if page.toc %}
+  <div class="post-layout">
+    <div class="post-content" id="post-content">
+      {{ content }}
+    </div>
+    <aside class="toc" id="toc">
+      <div class="toc__title">Table of Contents</div>
+      <ul id="toc-list"></ul>
+    </aside>
+  </div>
+  {% else %}
+  <div class="post-content" id="post-content">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <!-- Post Footer -->
+  <footer class="post-footer">
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </footer>
+
+  <!-- Comments -->
+  {% if page.comments != false %}
+    {% include comments.html %}
+  {% endif %}
+
+  <!-- Related Posts -->
+  {% assign related = site.related_posts | slice: 0, 3 %}
+  {% if related.size > 0 %}
+  <section class="related-posts">
+    <h2 class="related-posts__title">Related Posts</h2>
+    <div class="related-posts__grid">
+      {% for post in related %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>

@@ -1,0 +1,64 @@
+// ======================
+// Code Blocks & Syntax Highlighting
+// ======================
+
+// Code block container
+.highlight,
+pre.highlight {
+  @include glass(8px, 0.5, 0.12);
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  margin: $spacing-lg 0;
+  overflow-x: auto;
+  position: relative;
+
+  // Language label
+  &[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-md;
+    font-size: 0.7rem;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  pre {
+    margin: 0;
+    background: none;
+    overflow-x: auto;
+  }
+
+  code {
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    tab-size: 2;
+  }
+}
+
+// Rouge syntax highlighting theme (dark purple)
+.highlight {
+  .c, .cm, .c1, .cs { color: #6b6280; font-style: italic; } // Comments
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { color: #c792ea; }     // Keywords
+  .s, .sb, .sc, .sd, .s2, .sh, .sx, .s1 { color: #c3e88d; } // Strings
+  .na { color: #ffcb6b; }                                     // Attribute names
+  .nb { color: #82aaff; }                                     // Built-in names
+  .nc { color: #ffcb6b; }                                     // Class names
+  .nf, .fm { color: #82aaff; }                                // Function names
+  .no { color: #f78c6c; }                                     // Constants
+  .ni { color: #89ddff; }                                     // Entity
+  .ne { color: #f07178; }                                     // Exception
+  .nv, .vc, .vs, .vi, .vm { color: #f78c6c; }                // Variables
+  .o, .ow { color: #89ddff; }                                 // Operators
+  .p { color: #89ddff; }                                      // Punctuation
+  .m, .mf, .mh, .mi, .mo, .il { color: #f78c6c; }           // Numbers
+  .sr { color: #89ddff; }                                     // Regex
+  .ss { color: #c3e88d; }                                     // Symbol
+  .err { color: #f07178; }                                    // Error
+  .w { color: $text-secondary; }                              // Whitespace
+  .nt { color: #f07178; }                                     // Tag names (HTML)
+  .nn { color: #ffcb6b; }                                     // Namespace
+  .nx { color: #82aaff; }                                     // Other names (JS)
+}

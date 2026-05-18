@@ -4,10 +4,10 @@
 
 // Standard glass card
 @mixin glass($blur: $glass-blur, $opacity: 0.6, $border-opacity: 0.15) {
-  background: rgba(30, 21, 53, $opacity);
+  background: rgba(var(--surface-rgb), $opacity);
   backdrop-filter: blur($blur) saturate(150%);
   -webkit-backdrop-filter: blur($blur) saturate(150%);
-  border: 1px solid rgba(168, 139, 250, $border-opacity);
+  border: 1px solid rgba(var(--highlight-rgb), $border-opacity);
   border-radius: $border-radius;
 }
 
@@ -21,10 +21,10 @@
 
 // Light glass (navbars, subtle containers)
 @mixin glass-light() {
-  background: rgba(30, 21, 53, 0.4);
+  background: var(--surface-40);
   backdrop-filter: blur(8px) saturate(140%);
   -webkit-backdrop-filter: blur(8px) saturate(140%);
-  border: 1px solid rgba(168, 139, 250, 0.1);
+  border: 1px solid var(--glass-border-10);
 }
 
 // Glass with gradient border
@@ -38,7 +38,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba($accent-start, 0.3), transparent, rgba($accent-end, 0.2));
+    background: linear-gradient(135deg, var(--accent-start-30), transparent, var(--accent-end-20));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -52,20 +52,20 @@
   transition: all $transition-base;
 
   &:hover {
-    background: rgba(30, 21, 53, 0.75);
+    background: var(--surface-75);
     border-color: $glass-border-hover;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                0 0 20px rgba($accent-start, 0.08);
+    box-shadow: 0 8px 32px var(--black-30),
+                0 0 20px var(--accent-start-08);
     transform: translateY(-2px);
   }
 }
 
 // Glass tag/badge
 @mixin glass-tag() {
-  background: rgba(108, 99, 255, 0.1);
+  background: var(--accent-start-10);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(108, 99, 255, 0.2);
+  border: 1px solid var(--accent-start-20);
   border-radius: 20px;
   padding: $spacing-xs $spacing-sm;
   font-size: $font-size-sm;
@@ -74,15 +74,15 @@
   transition: all $transition-fast;
 
   &:hover {
-    background: rgba(108, 99, 255, 0.2);
-    border-color: rgba(108, 99, 255, 0.4);
-    color: lighten($highlight, 10%);
+    background: var(--accent-start-20);
+    border-color: var(--accent-start-40);
+    color: $highlight-light;
   }
 }
 
 // Fallback for browsers without backdrop-filter
 @supports not (backdrop-filter: blur(1px)) {
   .glass-fallback {
-    background: rgba(30, 21, 53, 0.92) !important;
+    background: var(--surface-92) !important;
   }
 }

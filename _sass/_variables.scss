@@ -1,42 +1,43 @@
 // ======================
-// Color System
+// Color System (references CSS custom properties from _themes.scss)
 // ======================
-$bg-primary:     #0f0a1e;
-$bg-secondary:   #1a1230;
-$surface:        #1e1535;
-$surface-light:  #2a1f45;
+$bg-primary:     var(--bg-primary);
+$bg-secondary:   var(--bg-secondary);
+$surface:        var(--surface);
+$surface-light:  var(--surface-light);
+$surface-darker: var(--surface-darker);
 
-$accent-start:   #6c63ff;
-$accent-end:     #3b82f6;
-$accent-gradient: linear-gradient(135deg, $accent-start, $accent-end);
+$accent-start:   var(--accent-start);
+$accent-end:     var(--accent-end);
+$accent-gradient: linear-gradient(135deg, var(--accent-start), var(--accent-end));
 
-$text-primary:   #e8e6f0;
-$text-secondary: #9b95b0;
-$text-muted:     #6b6280;
-$highlight:      #a78bfa;
-$highlight-soft: rgba(167, 139, 250, 0.15);
+$text-primary:   var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted:     var(--text-muted);
+$highlight:      var(--highlight);
+$highlight-light:var(--highlight-light);
 
-$success:        #34d399;
-$warning:        #fbbf24;
-$danger:         #f87171;
+$success:        var(--success);
+$warning:        var(--warning);
+$danger:         var(--danger);
 
 // ======================
 // Neumorphism Shadows
 // ======================
-$neu-light:      rgba(100, 80, 180, 0.12);
-$neu-dark:       rgba(0, 0, 0, 0.5);
-$neu-inset-light: rgba(100, 80, 180, 0.08);
-$neu-inset-dark:  rgba(0, 0, 0, 0.4);
+$neu-light:      var(--neu-light);
+$neu-dark:       var(--neu-dark);
+$neu-inset-light: var(--neu-inset-light);
+$neu-inset-dark:  var(--neu-inset-dark);
 
 // ======================
 // Glassmorphism
 // ======================
-$glass-bg:       rgba(30, 21, 53, 0.6);
-$glass-bg-heavy: rgba(15, 10, 30, 0.8);
-$glass-border:   rgba(168, 139, 250, 0.15);
-$glass-border-hover: rgba(168, 139, 250, 0.3);
-$glass-blur:     12px;
-$glass-blur-heavy: 20px;
+$glass-bg:       var(--surface-40);
+$glass-bg-heavy: var(--bg-primary-85);
+$glass-border:   var(--glass-border-15);
+$glass-border-hover: var(--glass-border-30);
+$glass-blur:     var(--glass-blur);
+$glass-blur-heavy: var(--glass-blur-heavy);
 
 // ======================
 // Typography

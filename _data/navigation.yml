@@ -1,10 +1,15 @@
 - title: Home
   url: /
+  i18n_key: home
 - title: Archive
   url: /archive/
+  i18n_key: archive
 - title: Categories
   url: /categories/
+  i18n_key: categories
 - title: Tags
   url: /tags/
+  i18n_key: tags
 - title: About
   url: /about/
+  i18n_key: about

@@ -3,6 +3,13 @@ layout: default
 ---
 
 <article class="container-narrow">
+  <!-- Featured Image -->
+  {% if page.image %}
+  <div class="post-featured-image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager">
+  </div>
+  {% endif %}
+
   <!-- Post Header -->
   <header class="post-header">
     <h1 class="post-header__title">{{ page.title }}</h1>
@@ -15,7 +22,7 @@ layout: default
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         {% assign words = content | number_of_words %}
         {% assign mins = words | divided_by: 200 %}
-        {% if mins < 1 %}1{% else %}{{ mins }}{% endif %} min read
+        {% if mins < 1 %}1{% else %}{{ mins }}{% endif %} <span data-i18n="post.readingTime">min read</span>
       </span>
       {% if page.categories.size > 0 %}
       <div class="post-header__categories">
@@ -34,7 +41,7 @@ layout: default
       {{ content }}
     </div>
     <aside class="toc" id="toc">
-      <div class="toc__title">Table of Contents</div>
+      <div class="toc__title" data-i18n="toc.title">目录</div>
       <ul id="toc-list"></ul>
     </aside>
   </div>
@@ -64,7 +71,7 @@ layout: default
   {% assign related = site.related_posts | slice: 0, 3 %}
   {% if related.size > 0 %}
   <section class="related-posts">
-    <h2 class="related-posts__title">Related Posts</h2>
+    <h2 class="related-posts__title" data-i18n="post.related">相关文章</h2>
     <div class="related-posts__grid">
       {% for post in related %}
         {% include post-card.html post=post %}

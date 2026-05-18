@@ -1,0 +1,149 @@
+// ======================
+// CSS Custom Properties for Theme Switching
+// ======================
+
+// Dark Theme (default)
+:root, [data-theme="dark"] {
+  // Core colors
+  --bg-primary:     #0f0a1e;
+  --bg-secondary:   #1a1230;
+  --surface:        #1e1535;
+  --surface-light:  #2a1f45;
+  --surface-darker: #1a1130;
+
+  --accent-start:   #6c63ff;
+  --accent-end:     #3b82f6;
+  --highlight:      #a78bfa;
+  --highlight-light:#c4b5fd;
+
+  --text-primary:   #e8e6f0;
+  --text-secondary: #9b95b0;
+  --text-muted:     #6b6280;
+
+  --success:        #34d399;
+  --warning:        #fbbf24;
+  --danger:         #f87171;
+
+  // RGB versions for rgba()
+  --bg-primary-rgb:     15, 10, 30;
+  --bg-secondary-rgb:   26, 18, 48;
+  --surface-rgb:        30, 21, 53;
+  --surface-light-rgb:  42, 31, 69;
+  --accent-start-rgb:   108, 99, 255;
+  --accent-end-rgb:     59, 130, 246;
+  --highlight-rgb:      167, 139, 250;
+
+  // Pre-computed transparent colors
+  --highlight-soft:   rgba(167, 139, 250, 0.15);
+  --accent-start-06:  rgba(108, 99, 255, 0.06);
+  --accent-end-04:    rgba(59, 130, 246, 0.04);
+  --highlight-03:     rgba(168, 139, 250, 0.03);
+  --accent-start-30:  rgba(108, 99, 255, 0.3);
+  --highlight-08:     rgba(167, 139, 250, 0.08);
+  --highlight-10:     rgba(167, 139, 250, 0.1);
+  --highlight-15:     rgba(167, 139, 250, 0.15);
+  --surface-40:       rgba(30, 21, 53, 0.4);
+  --surface-75:       rgba(30, 21, 53, 0.75);
+  --surface-92:       rgba(30, 21, 53, 0.92);
+  --bg-primary-85:    rgba(15, 10, 30, 0.85);
+  --accent-start-08:  rgba(108, 99, 255, 0.08);
+  --accent-start-10:  rgba(108, 99, 255, 0.1);
+  --accent-start-20:  rgba(108, 99, 255, 0.2);
+  --accent-start-25:  rgba(108, 99, 255, 0.25);
+  --accent-start-40:  rgba(108, 99, 255, 0.4);
+  --accent-end-20:    rgba(59, 130, 246, 0.2);
+  --glass-border-10:  rgba(168, 139, 250, 0.1);
+  --glass-border-15:  rgba(168, 139, 250, 0.15);
+  --glass-border-30:  rgba(168, 139, 250, 0.3);
+  --black-30:         rgba(0, 0, 0, 0.3);
+  --black-50:         rgba(0, 0, 0, 0.5);
+  --selection-bg:     rgba(108, 99, 255, 0.3);
+
+  // Neumorphism shadows
+  --neu-light:        rgba(100, 80, 180, 0.12);
+  --neu-dark:         rgba(0, 0, 0, 0.5);
+  --neu-inset-light:  rgba(100, 80, 180, 0.08);
+  --neu-inset-dark:   rgba(0, 0, 0, 0.4);
+
+  // Glassmorphism
+  --glass-blur:       12px;
+  --glass-blur-heavy: 20px;
+
+  // Background patterns
+  --bg-dot-color:     rgba(168, 139, 250, 0.03);
+  --bg-radial-1:      rgba(108, 99, 255, 0.06);
+  --bg-radial-2:      rgba(59, 130, 246, 0.04);
+}
+
+// Light Theme
+[data-theme="light"] {
+  --bg-primary:     #f8fafc;
+  --bg-secondary:   #f1f5f9;
+  --surface:        #ffffff;
+  --surface-light:  #f8fafc;
+  --surface-darker: #f1f5f9;
+
+  --accent-start:   #4f46e5;
+  --accent-end:     #2563eb;
+  --highlight:      #6366f1;
+  --highlight-light:#818cf8;
+
+  --text-primary:   #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #94a3b8;
+
+  --success:        #10b981;
+  --warning:        #f59e0b;
+  --danger:         #ef4444;
+
+  // RGB versions
+  --bg-primary-rgb:     248, 250, 252;
+  --bg-secondary-rgb:   241, 245, 249;
+  --surface-rgb:        255, 255, 255;
+  --surface-light-rgb:  248, 250, 252;
+  --accent-start-rgb:   79, 70, 229;
+  --accent-end-rgb:     37, 99, 235;
+  --highlight-rgb:      99, 102, 241;
+
+  // Pre-computed transparent colors
+  --highlight-soft:   rgba(99, 102, 241, 0.1);
+  --accent-start-06:  rgba(79, 70, 229, 0.06);
+  --accent-end-04:    rgba(37, 99, 235, 0.04);
+  --highlight-03:     rgba(99, 102, 241, 0.03);
+  --accent-start-30:  rgba(79, 70, 229, 0.3);
+  --highlight-08:     rgba(99, 102, 241, 0.08);
+  --highlight-10:     rgba(99, 102, 241, 0.1);
+  --highlight-15:     rgba(99, 102, 241, 0.15);
+  --surface-40:       rgba(255, 255, 255, 0.7);
+  --surface-75:       rgba(255, 255, 255, 0.85);
+  --surface-92:       rgba(248, 250, 252, 0.95);
+  --bg-primary-85:    rgba(248, 250, 252, 0.9);
+  --accent-start-08:  rgba(79, 70, 229, 0.08);
+  --accent-start-10:  rgba(79, 70, 229, 0.1);
+  --accent-start-20:  rgba(79, 70, 229, 0.2);
+  --accent-start-25:  rgba(79, 70, 229, 0.25);
+  --accent-start-40:  rgba(79, 70, 229, 0.4);
+  --accent-end-20:    rgba(37, 99, 235, 0.2);
+  --glass-border-10:  rgba(99, 102, 241, 0.1);
+  --glass-border-15:  rgba(99, 102, 241, 0.15);
+  --glass-border-30:  rgba(99, 102, 241, 0.3);
+  --black-30:         rgba(0, 0, 0, 0.06);
+  --black-50:         rgba(0, 0, 0, 0.1);
+  --selection-bg:     rgba(79, 70, 229, 0.2);
+
+  // Neumorphism shadows (lighter for light theme)
+  --neu-light:        rgba(255, 255, 255, 0.9);
+  --neu-dark:         rgba(0, 0, 0, 0.06);
+  --neu-inset-light:  rgba(255, 255, 255, 0.7);
+  --neu-inset-dark:   rgba(0, 0, 0, 0.04);
+
+  // Background patterns
+  --bg-dot-color:     rgba(99, 102, 241, 0.04);
+  --bg-radial-1:      rgba(79, 70, 229, 0.04);
+  --bg-radial-2:      rgba(37, 99, 235, 0.03);
+}
+
+// Smooth theme transition
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

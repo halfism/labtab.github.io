@@ -5,17 +5,28 @@
     <ul class="nav__links">
       {% for item in site.data.navigation %}
       <li>
-        <a href="{{ item.url | relative_url }}" class="nav__link {% if page.url == item.url %}active{% endif %}">
+        <a href="{{ item.url | relative_url }}" class="nav__link {% if page.url == item.url %}active{% endif %}" data-i18n="nav.{{ item.i18n_key | default: item.title | downcase }}">
           {{ item.title }}
         </a>
       </li>
       {% endfor %}
     </ul>
 
-    <button class="nav__search-btn" id="search-btn" aria-label="Search">
-      <i class="lucide-search" style="width:16px;height:16px;"></i>
-      <kbd>Ctrl+K</kbd>
-    </button>
+    <div class="nav__actions">
+      <button class="nav__lang-btn" id="lang-btn" aria-label="Switch language" title="切换语言">
+        <span id="lang-icon">中</span>
+      </button>
+
+      <button class="nav__theme-btn" id="theme-btn" aria-label="Toggle theme" title="切换主题">
+        <svg class="theme-icon moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="theme-icon sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <button class="nav__search-btn" id="search-btn" aria-label="Search" data-i18n-label="nav.search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <kbd>Ctrl+K</kbd>
+      </button>
+    </div>
 
     <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
       <span></span>

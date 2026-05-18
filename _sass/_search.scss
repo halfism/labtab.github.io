@@ -23,7 +23,7 @@
   @include glass(16px, 0.7, 0.2);
   border-radius: $border-radius-lg;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px var(--black-50);
   animation: searchSlideIn 0.2s ease-out;
 }
 

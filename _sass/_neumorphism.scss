@@ -26,7 +26,7 @@
   box-shadow:
     #{6px * $intensity} #{6px * $intensity} #{14px * $intensity} $neu-dark,
     #{-3px * $intensity} #{-3px * $intensity} #{10px * $intensity} $neu-light,
-    0 0 #{20px * $intensity} rgba($color, 0.15);
+    0 0 #{20px * $intensity} rgba(var(--accent-start-rgb), 0.15);
 }
 
 // Button styles
@@ -68,7 +68,7 @@
 // Input field
 @mixin neu-input() {
   @include neu-pressed(0.4);
-  background: darken($surface, 3%);
+  background: $surface-darker;
   border: 1px solid $glass-border;
   border-radius: $border-radius-sm;
   padding: $spacing-sm $spacing-md;
@@ -82,7 +82,7 @@
     border-color: $accent-start;
     box-shadow:
       inset 2px 2px 4px $neu-inset-dark,
-      0 0 0 2px rgba($accent-start, 0.2);
+      0 0 0 2px var(--accent-start-20);
   }
 
   &::placeholder {

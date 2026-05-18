@@ -30,10 +30,10 @@
 // Pulse glow
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.1);
+    box-shadow: 0 0 20px var(--accent-start-10);
   }
   50% {
-    box-shadow: 0 0 30px rgba(108, 99, 255, 0.25);
+    box-shadow: 0 0 30px var(--accent-start-25);
   }
 }
 

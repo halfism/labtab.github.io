@@ -69,10 +69,16 @@
       });
   }
 
+  function t(key, fallback) {
+    var lang = window.__getLang ? window.__getLang() : 'zh';
+    var dict = window.__i18n ? (window.__i18n[lang] || window.__i18n.zh) : {};
+    return dict[key] || fallback;
+  }
+
   // Perform search
   function performSearch(query) {
     if (!searchIndex || !query.trim()) {
-      searchResults.innerHTML = '<div class="search-modal__empty">Type to search...</div>';
+      searchResults.innerHTML = '<div class="search-modal__empty" data-i18n="search.empty">' + t('search.empty', 'Type to start searching') + '</div>';
       return;
     }
 
@@ -84,7 +90,7 @@
     }
 
     if (results.length === 0) {
-      searchResults.innerHTML = '<div class="search-modal__empty">No results found for "' + escapeHtml(query) + '"</div>';
+      searchResults.innerHTML = '<div class="search-modal__empty" data-i18n="search.noresult">' + t('search.noresult', 'No results found') + '</div>';
       return;
     }
 

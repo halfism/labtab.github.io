@@ -69,7 +69,7 @@ comments:
     repo: "halfism/labtab"
     repo_id: "R_kgDOSgFenw"
     category: "Blog Comments"
-    category_id: ""  # 启用 Discussions 后在 giscus.app 获取
+    category_id: "DIC_kwDOSgFen84C9TPR"  # Blog Comments
     mapping: "pathname"
     reactions_enabled: "1"
     emit_metadata: "0"

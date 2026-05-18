@@ -67,9 +67,9 @@ comments:
   provider: giscus
   giscus:
     repo: "halfism/labtab"
-    repo_id: ""
+    repo_id: "R_kgDOSgFenw"
     category: "Blog Comments"
-    category_id: ""
+    category_id: ""  # 启用 Discussions 后在 giscus.app 获取
     mapping: "pathname"
     reactions_enabled: "1"
     emit_metadata: "0"
